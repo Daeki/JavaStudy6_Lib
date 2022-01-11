@@ -3,7 +3,7 @@ package com.iu.s1.lang.wrapper;
 public class WrapperMain {
 
 	public static void main(String[] args) {
-		
+		System.out.println(168/11);
 		
 		int num = 10;
 		
