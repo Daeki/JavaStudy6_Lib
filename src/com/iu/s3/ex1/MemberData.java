@@ -26,8 +26,9 @@ public class MemberData {
 		System.out.println("삭제할 ID 입력");
 		String id=this.sc.next();
 		//int index=-1;
-		
+		System.out.println(id);
 		for(int i=0;i<ar.size();i++) {
+			System.out.println(ar.get(i).getId());
 			if(ar.get(i).getId().equals(id)) {
 				//index=i;
 				memberDTO = ar.remove(i);
