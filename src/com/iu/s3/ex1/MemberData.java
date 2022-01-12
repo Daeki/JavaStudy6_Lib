@@ -33,7 +33,6 @@ public class MemberData {
 				memberDTO = ar.remove(i);
 				break;
 			}
-			
 		}
 		
 		return memberDTO;
