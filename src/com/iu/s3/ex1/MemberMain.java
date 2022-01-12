@@ -30,7 +30,13 @@ public class MemberMain {
 		MemberData memberData = new MemberData();
 		ArrayList<MemberDTO> members = memberData.init();
 		
-		memberData.addMember(members);
+		//memberData.addMember(members);
+		MemberDTO memberDTO = memberData.removeMember(members);
+		if(memberDTO != null) {
+			System.out.println("삭제 성공");
+		}else {
+			System.out.println("삭제 실패");
+		}
 		
 		for(int i=0;i<members.size();i++) {
 			System.out.println(members.get(i).getId());
