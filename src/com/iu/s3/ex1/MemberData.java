@@ -1,6 +1,7 @@
 package com.iu.s3.ex1;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class MemberData {
 	
@@ -15,13 +16,36 @@ public class MemberData {
 		System.out.println(this.data);
 	}
 	
+	public void addMember(ArrayList<MemberDTO> ar) {
+		//새로추가할 MemberDTO 생성
+		//키보드로 부터 id, pw, name, email, age 입력받아서
+		//MemberDTO의 멤버변수 값으로 대입
+		//매개변수로 받은 ar에 MemberDTO 추가
+		
+		
+	}
+	
+	
 	public ArrayList<MemberDTO> init() {
 		//data에 있는 문자열을 StringTokenizer로 파싱해서
 		//MemberDTO를 생성해서 멤버변수값으로 대입
 		//MemberDTO들을 ArrayList에 담아서 리턴
 		System.out.println("MemberEx1 Branch");
 		
-		return null;
+		StringTokenizer st = new StringTokenizer(this.data, "-");
+		ArrayList<MemberDTO> ar = new ArrayList<>();
+		
+		while(st.hasMoreTokens()) {
+			MemberDTO memberDTO = new MemberDTO();
+			memberDTO.setId(st.nextToken().trim());
+			memberDTO.setPw(st.nextToken().trim());
+			memberDTO.setName(st.nextToken().trim());
+			memberDTO.setEmail(st.nextToken().trim());
+			memberDTO.setAge(Integer.parseInt(st.nextToken().trim()));
+			ar.add(memberDTO);
+		}
+		
+		return ar;
 	}
 
 }
